@@ -1,0 +1,23 @@
+<h1>Бойцы МК</h1>
+
+<ul>
+    {% for i in fighter %}
+    <li>
+        <h2>Имя: {{ i.title }}</h2>
+        <img src="{{ i.photo.url }}" alt="{{ i.title }}" width="300" height="200">
+        <p>Время создание поста: {{ i.created_at }}</p>
+        <br>
+        <a href="{% url 'fgt_id' i.id %}">Подробнее</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Факты о МК</h2>
+<ol>
+    {% for fact in facts %}
+    <li>
+        <p>{{ fact.facts }}</p>
+        <p>{{ fact.created_at }}</p>
+    </li>
+    {% endfor %}
+</ol>
