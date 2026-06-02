@@ -1,0 +1,16 @@
+<h1>Моя коллекция игр на 2026</h1>
+<a href="#">Добавить игру в коллецию</a>
+<ul>
+    {% for i in game %}
+    <li>
+        <h2>Имя: {{ i.title }}</h2>
+        <img src="{{ i.photo.url }}" alt="{{ i.title }}" width="300" height="200">
+        <p>Описание игры: {{ i.description }}</p>
+        <a href="{{ i.url }}" target="_blank">Перейти по ссылке для скачивания</a>
+        <br>
+        <a href="/games_list/{{ i.id }}/delete/">Удалить</a>
+        <a href="/games_list/{{ i.id }}/update/">Редактировать</a>
+    </li>
+    {% endfor %}
+</ul>
+
