@@ -1,0 +1,18 @@
+<h1>Люди</h1>
+
+<ul>
+    {% for i in us_lst %}
+    <li>
+        <img src="{{ i.photo.url }}" alt="" width="200" height="150">
+        <h2>Имя: {{ i.username }}</h2>
+        <p>Телефон: {{ i.phone_number }}</p>
+        <p>EMAIL: {{ i.email }}</p>
+        <p>Пол: {{ i.gender }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'unlog' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Выход</button>
+</form>
