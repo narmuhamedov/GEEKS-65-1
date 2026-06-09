@@ -10,6 +10,8 @@
 <p>Ссылка не добавлена!!!</p>
 {% endif %}
 
+<p>Кол-во просмотров - {{ fgt_id.views }}</p>
+
 <p>Дата создания - {{ fgt_id.created_at }}</p>
 
 <a href="{% url 'fighter_list' %}">Назад к списку</a>
